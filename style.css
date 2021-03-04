@@ -127,8 +127,6 @@
     font-family: "Segoe UI",Arial,sans-serif;
     font-weight: 400;
     text-align: center!important;
-    padding: 20px 0 20 0px;
-    margin: 0;
 }
 
 /************************** Style for Content ends *************************/
@@ -164,6 +162,10 @@
   text-align: center!important;
   padding: 20px 0 20 0px;
   margin: 0;
+}
+
+#dataset{
+  text-align: center!important;
 }
 
 #codeHeading {
@@ -285,4 +287,21 @@ h3 {
 .dataLink{
   color: #009688;
   font-size: 30px; 
+}
+
+.okvqas3 {
+  text-align: left;
+  color: #009688;
+  font-size: 25px;
+}
+
+.setFontSize {
+  font-size: 25px;
+  font-weight:200;
+  margin: 0;
+  
+}
+
+.margin30{
+  margin: 30px;
 }
