@@ -1,191 +1,94 @@
 <!DOCTYPE html>
 <html>
-<title>3S</title>
+<title>S3VQA</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+
+<link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
 <body id="myPage">
-    <style>
 
-.header {
-padding: 40px;
-text-align: left;
-background: #009688;
-color: white;
-font-size: 30px;
-}
-
-#VQAQues {
-
-font-size: 60px;
-color: gray;
-}
-</style>
-
-    <div class="header">
-        <h1><strong>3SVQA</strong></h1>
-        <p><h1><strong> Select, Substitute, Search: A New Benchmark for Knowledge-Augmented Visual Question Answering</strong></h1></p>
-        <p id="myParra">Indian Institute of Technology, Bombay</p>
-      </div>
-
-
-
-    <!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-theme-d2 w3-left-align">
-            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
-                href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-            <a href="#VQA" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>VQA</a>
-            <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
-            <div class="w3-dropdown-hover w3-hide-small">
-                <button class="w3-button" title="Challenge">Challenge <i class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-                    <button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button" title="2021">2021</button>
-            </div>  
-            </div>
-        </div>
-
-        <!-- Navbar on small screens -->
-        <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-            <a href="#VQA" class="w3-bar-item w3-button">VQA</a>
-            <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-        </div>
+<div class="header" style="display: inline-flexbox"> 
+    <h1 id="vqa">S3VQA</h1> 
+    <div style="display: inline-flexbox;">
+        <p>Open-Domain Visual Questioning and Answering</p>
+      
     </div>
-
-    <!-- Error -->
-    <div id="id01" class="w3-modal">
-        <div class="w3-modal-content w3-card-4 w3-animate-top">
-        <header class="w3-container w3-teal w3-display-container"> 
-            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-            <h4>Oh snap! </h4>
-        </header>
-        <div class="w3-container">
-            <p> Site is under maintenance...</p>
-            <p> We will be back soon.</p>
-        </div>
-        <footer class="w3-container w3-teal">
-            <p>Thanks for visiting us <i class="fa fa-smile-o"></i></p>
-        </footer>
-        </div>
+</div>    
+<!--Navigation bar-->
+<div class="topnav">
+  <a class="active" href="#content">Home</a>
+  <a href="#code">Code</a>
+  <a href="#dataset">Dataset</a>
+  <div class="dropdown">
+    <button class="dropbtn">Challenge
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="https://competitions.codalab.org/competitions/29617">2021</a>
     </div>
+  </div>
+  <a href="#contact">Contact</a>
+</div>
 
-    <!-- Description container -->
-    <div class="w3-container w3-padding-64" id="S3QA">
-        <h2 class="w3-center" id="VQAQues">What is S3QA?</h2>
-        <p style="font-size:20px; font-weight:200; display:inline">S3QA is a new dataset containing open-domain questions
-            about images. These questions require an understanding of vision, language and commonsense knowledge to
-            answer.</p>
-        <div>
-            <ul style="font-size:18px; font-weight:150">
-                <li>Approx 8K images</li>
-		<li>Around 8K question</li>
-                <li>Automatic evaluation metric</li>
-            </ul>
-        </div>
+<!-- Overview container -->
+<div class="container padding-64" id="content">
+  <h2>This website is a resource for the paper <a href="#" style="color: #009688;">Select, Substitute, Search: A New Benchmark for Knowledge-Augmented Visual Question Answering</a></h2>  
+  <h2 class="w3-center" id="VQAQues">What is S3VQA?</h2>
+    <p style="font-size:20px; font-weight:200; display:inline">S3-VQA provides a new approach along with a new challenge dataset 
+        in the field open-domain visual question answering 
+        which involves select, substitute and search (3S) internally while processing the queries. 
+        These questions in the dataset require an understanding of vision, language and external knowledge to answer.</p>
+    <div>
+        <ul style="font-size:18px; font-weight:150">
+            <li>Approx. 8k questions</li>
+            <li>Around 8k questions</li>
+            <li>Supporting facts with each question</li>
+            <li>Automatic evaluation metric</li>
+        </ul>
     </div>
+</div>
+<hr>
 
+<!-- Dataset Container -->
 
-    <!-- Contact Container -->
+<div class="container padding-64 backgroundTheme center" id="dataset">
+  <p id="datasetHeading1"><span class="bottombar">DATASET</span></p>
+  <p style="font-size: 30px;"> Download the file for dataset:</p>
+ <a href="https://github.com/s3vqa/s3vqa.github.io/tree/main/data" style="color: #009688;"><span class="dataLink">Data here</span></a>
+</div>  
+<hr>
+<!-- Code Container -->
 
-    <div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
+<div class="container padding-64 backgroundTheme center" id="code">
+  <p id="codeHeading"><span class="bottombar">CODE</span></p>
+  <p style="font-size: 30px;"> Here is the link for the code of this paper.</p>
+  <a href="https://github.com/s3vqa/s3vqa.github.io/tree/main/code" style="color: #009688;"><span class="dataLink">Access code here</span></a>
+</div>   
+<hr>
+<!-- Contact Container -->
 
-        <div class="w3-row">
+<div class="container padding-64 backgroundTheme" id="contact">
+   
+            <div class="padding-16"><span class="xlarge bottombar">Contact Us</span></span></div>
+            <h3>Address</h3>
+            <p>Indian Institute Of Technology, Main gate road, IIT Area, Powai</p>
+            <p><i class="fa fa-map-marker text-teal xlarge"></i> Mumbai, India</p>
+            <p><i class="fa fa-phone text-teal xlarge"></i> 8954990592 </p>
+            <p><i class="fa fa-envelope-o text-teal xlarge"></i> maykat2017@gmail.com</p>
+</div>
 
-            <div class="w3-col m5">
+<!-- Footer -->
 
-                <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
-
-                <h3>Address</h3>
-
-                <p>Indian Institute Of Technology, Main gate road, IIT Area, Powai</p>
-
-                <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i> Mumbai, India</p>
-
-                <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i> 8954990592 </p>
-
-                <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i> maykat2017@gmail.com</p>
-
-            </div>
-
-            <div class="w3-col m7">
-
-                <div class="w3-section">
-
-                    <h4>Follow Us</h4>
-
-                    <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i
-                            class="fa fa-twitter"></i></a>
-
-                    <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i
-                            class="fa fa-google-plus"></i></a>
-
-                    <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i
-                            class="fa fa-linkedin"></i></a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- Footer -->
-
-        <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
-
-            <h4><strong>Feedback</strong></h4>
-
-
-
-            <p>Any feedback is very welcome! <a href="mailto: maykat2017@gmail.com">Send Email
-                    (maykat2017@gmail.com) <i class="fa fa-envelope"></i></a></p>
-
-
-
-
-
-            <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
-
-                <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
-
-                <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
-
-                        <i class="fa fa-chevron-circle-up"></i></span></a>
-
-            </div>
-
-        </footer>
-
-        <script>
-            // Script for side navigation
-            function w3_open() {
-                var x = document.getElementById("mySidebar");
-                x.style.width = "300px";
-                x.style.paddingTop = "10%";
-                x.style.display = "block";
-            }
-
-            // Close side navigation
-            function w3_close() {
-                document.getElementById("mySidebar").style.display = "none";
-            }
-
-            // Used to toggle the menu on smaller screens when clicking on the menu button
-            function openNav() {
-                var x = document.getElementById("navDemo");
-                if (x.className.indexOf("w3-show") == -1) {
-                    x.className += " w3-show";
-                } else {
-                    x.className = x.className.replace(" w3-show", "");
-                }
-            }
-        </script>
-
+<footer class="container padding-32 theme-d1 center">
+    <h4><strong>Send us feedback!</strong></h4>
+    <p>Any feedback is very welcome <i class="fa fa-smile-o"></i> <a href="mailto: maykat2017@gmail.com" style="color: white;"> Send Email
+            (maykat2017@gmail.com) <i class="fa fa-envelope"></i></a></p>
+    <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+        <a class="w3-button w3-theme" href="#myPage"><span class="xlarge">
+                <i class="fa fa-chevron-circle-up"></i></span></a>
+    </div>
+</footer>
 </body>
-
 </html>
