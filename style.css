@@ -282,11 +282,20 @@ h3 {
 
 .dataLink:hover{
   color: darkslategrey;
-  font-size: 35px;
+  font-size: 45px;
 }
 .dataLink{
   color: #009688;
-  font-size: 30px; 
+  font-size: 40px; 
+}
+
+.dataLinkCh:hover{
+  color: darkslategrey;
+  font-size: 30px;
+}
+.dataLinkCh{
+  color: #009688;
+  font-size: 25px; 
 }
 
 .okvqas3 {
@@ -304,4 +313,9 @@ h3 {
 
 .margin30{
   margin: 30px;
+}
+
+.hrLine {
+  border: 2px solid #9E9E9E;
+  border-radius: 5px;
 }
