@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="C:\Users\MAYANK\Downloads\sigir_resource\html\745 PM\style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <body id="myPage">
@@ -19,17 +19,17 @@
 <!--Navigation bar-->
 <div class="topnav">
   <a class="active" href="#content">Home</a>
-  <a href="#code">Code</a>
   <div class="dropdown">
     <button class="dropbtn">Dataset
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
       <a href="#dataset">OKVQA<sub>S3</sub></a>
-      <a href="#dataset">S3VQA</a>
+      <a href="#s3VQA">S3VQA</a>
     </div>
   </div>
   <a href="#challenge">Challenge</a>
+  <a href="#code">Code</a>
   <a href="#contact">Contact</a>
 </div>
 
@@ -38,7 +38,7 @@
   <h2>This website is a resource for the paper <a href="#" style="color: #009688;">
     Select, Substitute, Search: A New Benchmark for Knowledge-Augmented Visual Question Answering</a>(Pending submissions SIGIR 2021)</h2>  
   <h2 class="center" id="VQAQues"><span class="bottombar"> What is S3VQA?</span></h2>
-    <p class="setFontSize margin30">S3-VQA provides a new approach along with a new challenge dataset in the field open-domain visual question answering which involves select, substitute and search (3S) internally while processing the queries. These questions in the dataset require an understanding of vision, language and external knowledge to answer.</p>
+    <p class="setFontSize" style="margin: 30px 0px 0px 0px;">S3-VQA provides a new approach along with a new challenge dataset in the field open-domain visual question answering which involves select, substitute and search (3S) internally while processing the queries. These questions in the dataset require an understanding of vision, language and external knowledge to answer.</p>
     <div class="setFontSize margin30">
         <ul>
             <li>6765 images</li>
@@ -49,14 +49,14 @@
         </ul>
     </div>
 </div>
-<hr>
+<hr class="hrLine">
 
 <!-- Dataset Container -->
 
 <div class="container padding-64 backgroundTheme" id="dataset">
   <p id="datasetHeading1"><span class="bottombar">DATASET</span></p>
   <span class="okvqas3"><h2>OKVQA<sub>S3</sub></h2></span>
-  <p class ="setFontSize" style=" text-align: left;"> We provide additional annotations for the OKVQA dataset.
+  <p class ="setFontSize" style=" text-align: left;"> We provide additional annotations for the <a href="https://okvqa.allenai.org/download.html" style="color: #009688;">OKVQA dataset</a>.
   We tag each of the questions in the OK-VQA dataset into one of the four types:
     <div class ="setFontSize margin30">
         <ul style=" text-align: left;">
@@ -78,8 +78,9 @@
         </div>
 </p>
   <p class ="setFontSize" style="text-align: left;"> Download all the annotated files for this subset from 
-  <span class="dataLink"><a href="https://github.com/s3vqa/s3vqa.github.io/tree/main/data" style="color: #009688;">here</a></span>.</p>
+  <a href="https://github.com/s3vqa/s3vqa.github.io/tree/main/data" style="color: #009688;"><span class="dataLinkCh">here</a></span>.</p>
   <br>
+  <span id="s3VQA">
   <span class="okvqas3"><h2>S3VQA</h2></span>
   <p class="setFontSize" style="text-align: left;">
     As part of this work we also release a new challenge dataset S3VQA. The dataset was created using the images from the
@@ -92,19 +93,20 @@
         </ul> 
     </div>
   </p>
-  <p class ="setFontSize" style="text-align: left;"> Download the files from <a href="https://github.com/s3vqa/s3vqa.github.io/tree/main/data" style="color: #009688;"><span class="dataLink"></span>here</span></a>.</p>
+</span>
+  <p class ="setFontSize" style="text-align: left;"> Download the files from <a href="https://github.com/s3vqa/s3vqa.github.io/tree/main/data" style="color: #009688;"><span class="dataLinkCh">here</span></a>.</p>
 </div>  
-<hr>
+<hr class="hrLine">
 
 <!-- Code Container -->
 
 <div class="container padding-64 backgroundTheme center" id="code">
   <p id="codeHeading"><span class="bottombar">CODE</span></p>
-  <p class ="setFontSize margin30"> Here is the link for the code of this paper.</p>
-  <a href="https://github.com/s3vqa/s3vqa.github.io/tree/main/code" style="color: #009688;"><span class="dataLink">Access code here</span></a>
+  <p class ="setFontSize margin30"> Access the code from the link given below: </p>
+  <a href="https://github.com/s3vqa/s3vqa.github.io/tree/main/code" style="color: #009688;"><span class="dataLink">Source Code</span></a>
 </div>   
 
-<hr>
+<hr class="hrLine">
 <!-- Challenge Container -->
 
 <div class="container padding-64 backgroundTheme center" id="challenge">
@@ -112,14 +114,14 @@
    <p style="text-align: left; margin: 30px 0px 0px 0px;" class ="setFontSize">Task : Given an image and a natural language question about the image, 
     the task is to find each of the following items
     <ul class ="setFontSize margin30" style="text-align: left;">
-      <li><a href="#dataset" style="color: #009688;">Span</a></li>
-     <li><a href="#dataset" style="color: #009688;">Object</a></li>
+      <li><a href="#dataset" style="color: #009688;"><span class="dataLinkCh">Span</span></a></li>
+     <li><a href="#dataset" style="color: #009688;"><span class="dataLinkCh">Object</span></a></li>
      <li> Accurate natural language answer</li>
     </ul>
    <p style="text-align: left;" class ="setFontSize">There are 2 tracks in this challenge:</p>
       <h5 class ="okvqas3 margin30">OKVQA<sub>S3</sub></h5>
       <ul class ="setFontSize margin30" style="text-align: left;">
-          <li>Train and test sets, contains more than 1K images and 2.4K questions.</li>
+          <li>Train and test sets, contains more than 2636 images and 2636 questions.</li>
       </ul> 
       <h5 class ="okvqas3 margin30">S3VQA</h5>
       <ul class ="setFontSize margin30" style="text-align: left;">
@@ -127,10 +129,10 @@
       </ul>
     <p style="text-align: left;" class ="setFontSize">You will need to create a JSON file with the name "output.json" containing your results in the correct format and submit the ".zip" file.</p>
   </p>
-  <a href="https://competitions.codalab.org/competitions/29726" style="color: #009688;"><span class="dataLink">Access challenge here</span></a>
+  <a href="https://competitions.codalab.org/competitions/29726" style="color: #009688;"><span class="dataLink margin30">Access challenge here</span></a>
 </div>   
 
-<hr>
+<hr class="hrLine">
 <!-- Contact Container -->
 
 <div class="container padding-64 backgroundTheme" id="contact">
