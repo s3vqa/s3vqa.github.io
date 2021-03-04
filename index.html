@@ -20,31 +20,31 @@
 <div class="topnav">
   <a class="active" href="#content">Home</a>
   <a href="#code">Code</a>
-  <a href="#dataset">Dataset</a>
   <div class="dropdown">
-    <button class="dropbtn">Challenge
+    <button class="dropbtn">Dataset
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="https://competitions.codalab.org/competitions/29726">2021</a>
+      <a href="#dataset">OKVQA<sub>S3</sub></a>
+      <a href="#dataset">S3VQA</a>
     </div>
   </div>
+  <a href="#challenge">Challenge</a>
   <a href="#contact">Contact</a>
 </div>
 
 <!-- Overview container -->
-<div class="container padding-64" id="content">
-  <h2>This website is a resource for the paper <a href="#" style="color: #009688;">Select, Substitute, Search: A New Benchmark for Knowledge-Augmented Visual Question Answering</a></h2>  
-  <h2 class="w3-center" id="VQAQues">What is S3VQA?</h2>
-    <p style="font-size:20px; font-weight:200; display:inline">S3-VQA provides a new approach along with a new challenge dataset 
-        in the field open-domain visual question answering 
-        which involves select, substitute and search (3S) internally while processing the queries. 
-        These questions in the dataset require an understanding of vision, language and external knowledge to answer.</p>
-    <div>
-        <ul style="font-size:18px; font-weight:150">
-            <li>Approx. 8k images</li>
-            <li>Around 8k questions</li>
-            <li>Supporting facts with each question</li>
+<div class="container padding-64 backgroundTheme" id="content">
+  <h2>This website is a resource for the paper <a href="#" style="color: #009688;">
+    Select, Substitute, Search: A New Benchmark for Knowledge-Augmented Visual Question Answering</a>(Pending submissions SIGIR 2021)</h2>  
+  <h2 class="center" id="VQAQues"><span class="bottombar"> What is S3VQA?</span></h2>
+    <p class="setFontSize margin30">S3-VQA provides a new approach along with a new challenge dataset in the field open-domain visual question answering which involves select, substitute and search (3S) internally while processing the queries. These questions in the dataset require an understanding of vision, language and external knowledge to answer.</p>
+    <div class="setFontSize margin30">
+        <ul>
+            <li>6765 images</li>
+            <li>6765 questions</li>
+            <li>Average span length: 4 (words)</li>
+            <li>Average answer length : 3 (words)</li>
             <li>Automatic evaluation metric</li>
         </ul>
     </div>
@@ -53,19 +53,83 @@
 
 <!-- Dataset Container -->
 
-<div class="container padding-64 backgroundTheme center" id="dataset">
+<div class="container padding-64 backgroundTheme" id="dataset">
   <p id="datasetHeading1"><span class="bottombar">DATASET</span></p>
-  <p style="font-size: 30px;"> Download the file for dataset:</p>
- <a href="https://github.com/s3vqa/s3vqa.github.io/tree/main/data" style="color: #009688;"><span class="dataLink">Data here</span></a>
+  <span class="okvqas3"><h2>OKVQA<sub>S3</sub></h2></span>
+  <p class ="setFontSize" style=" text-align: left;"> We provide additional annotations for the OKVQA dataset.
+  We tag each of the questions in the OK-VQA dataset into one of the four types:
+    <div class ="setFontSize margin30">
+        <ul style=" text-align: left;">
+            <li>Type 1 - Question which requrie detecting objects and subsequent reasoning over an external knowledge source to arrive at the answer</li>
+            <li>Type 2 - Question which require reading text from the image (OCR) (and no other information) to answer </li>
+            <li>Type 3 - Question which are based on personal opinion or speculation </li>
+            <li>Type 4 - Other</li>
+        </ul>
+      </div>
+  <p class ="setFontSize" style="text-align: left;"> 
+    Additional annoatations for Type 1 subset of OKVQA - OKVQA<sub>S3</sub>:
+    For each of the question in this subset, we provide 'annotated span' and 'annotated object' which are needed as part of query reformulation.
+    <br><br>Span and Object can be described as: 
+    <div class ="setFontSize margin30">
+            <ul style=" text-align: left;">
+                <li>Span : part of the question which needs to be replaced </li>
+                <li>Object : detected object from the image </li>
+            </ul> 
+        </div>
+</p>
+  <p class ="setFontSize" style="text-align: left;"> Download all the annotated files for this subset from 
+  <span class="dataLink"><a href="https://github.com/s3vqa/s3vqa.github.io/tree/main/data" style="color: #009688;">here</a></span>.</p>
+  <br>
+  <span class="okvqas3"><h2>S3VQA</h2></span>
+  <p class="setFontSize" style="text-align: left;">
+    As part of this work we also release a new challenge dataset S3VQA. The dataset was created using the images from the
+    <a href="https://storage.googleapis.com/openimages/web/index.html" style="color: #009688;"> Open Images dataset</a>. 
+    For our dataset, we provide two files each for train and test split:
+    <div class ="setFontSize">
+        <ul style="text-align: left;">
+            <li>which contains question_id, annotated span, annotated object and annotated answer</li>
+            <li>which contains question_id, image_id and question</li>
+        </ul> 
+    </div>
+  </p>
+  <p class ="setFontSize" style="text-align: left;"> Download the files from <a href="https://github.com/s3vqa/s3vqa.github.io/tree/main/data" style="color: #009688;"><span class="dataLink"></span>here</span></a>.</p>
 </div>  
 <hr>
+
 <!-- Code Container -->
 
 <div class="container padding-64 backgroundTheme center" id="code">
   <p id="codeHeading"><span class="bottombar">CODE</span></p>
-  <p style="font-size: 30px;"> Here is the link for the code of this paper.</p>
+  <p class ="setFontSize margin30"> Here is the link for the code of this paper.</p>
   <a href="https://github.com/s3vqa/s3vqa.github.io/tree/main/code" style="color: #009688;"><span class="dataLink">Access code here</span></a>
 </div>   
+
+<hr>
+<!-- Challenge Container -->
+
+<div class="container padding-64 backgroundTheme center" id="challenge">
+  <p id="codeHeading"><span class="bottombar">CHALLENGE</span></p>
+   <p style="text-align: left; margin: 30px 0px 0px 0px;" class ="setFontSize">Task : Given an image and a natural language question about the image, 
+    the task is to find each of the following items
+    <ul class ="setFontSize margin30" style="text-align: left;">
+      <li> Span <a href="#dataset" style="color: #009688;">(described here)</a></li>
+     <li> Object<a href="#dataset" style="color: #009688;">(described here)</a></li>
+     <li> Accurate natural language answer</li>
+    </ul>
+   <p style="text-align: left;" class ="setFontSize">There are 2 tracks in this challenge:</p>
+      <h5 class ="okvqas3 margin30">OKVQA<sub>S3</sub></h5>
+      <ul class ="setFontSize margin30" style="text-align: left;">
+          <li>Train and test sets, contains more than 1K image</li>
+      </ul> 
+      <h5 class ="okvqas3 margin30">S3VQA</h5>
+      <ul class ="setFontSize margin30" style="text-align: left;">
+        <li>Train and test sets, contains more than 6765 images and 6765 questions.</li>
+      </ul>
+    <p style="text-align: left;" class ="setFontSize">You will need to create a JSON file with the name "output.json" containing your results in the correct format and submit the ".zip" file.</p>
+  </p>
+  <a href="https://competitions.codalab.org/competitions/29726" style="color: #009688;"><span class="dataLink">Access challenge here</span></a>
+</div>   
+
 <hr>
 <!-- Contact Container -->
 
