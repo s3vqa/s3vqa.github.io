@@ -12,20 +12,19 @@
 <div class="header" style="display: inline-flexbox"> 
     <h1 id="vqa">S3VQA</h1> 
     <div style="display: inline-flexbox;">
-        <p>Select, Substitute, Search: A New Benchmark for
-            Knowledge-Augmented Visual Question Answering
-        </p>
+        <p><h2 style="font-size: 40px; margin: 0; padding: 0px 0px 10px 0px;">Select, Substitute, Search</h2>
+       <strong>New Benchmark for Knowledge-Augmented Visual Question Answering</strong></p>
     </div>
-</div>    
+</div>     
 <!--Navigation bar-->
 <div class="topnav">
-  <a class="active" href="#content">Home</a>
+  <a class="active" href="#">Home</a>
   <div class="dropdown">
     <button class="dropbtn">Dataset
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="#dataset">OKVQA<sub>S3</sub></a>
+      <a href="#OKVQAS3">OKVQA<sub>S3</sub></a>
       <a href="#s3VQA">S3VQA</a>
     </div>
   </div>
@@ -38,8 +37,11 @@
 <div class="container padding-64 backgroundTheme" id="content">
   <h2>This website is a resource for the paper <a href="#" style="color: #009688;">
     Select, Substitute, Search: A New Benchmark for Knowledge-Augmented Visual Question Answering</a>(Pending submissions SIGIR 2021)</h2>  
-  <h2 class="center" id="VQAQues"><span class="bottombar"> What is S3VQA?</span></h2>
-    <p class="setFontSize" style="margin: 30px 0px 0px 0px;">S3-VQA provides a new approach along with a new challenge dataset in the field open-domain visual question answering which involves select, substitute and search (3S) internally while processing the queries. These questions in the dataset require an understanding of vision, language and external knowledge to answer.</p>
+  <h2 class="center" id="headings"><span class="bottombar"> OVERVIEW </span></h2>
+    <p class="setFontSize" style="margin: 30px 0px 0px 0px;">
+      S3VQA provides a new approach that involves Select, Substitute, and Search (SSS) for open-domain visual question answering. S3 reaches the end result (i.e. natural language answer) for the VQA type query by first reformulating the input question (using Select and Substitute) and then retrieving external knowledge source facts (using Search). We, as part of this work, provide:
+      OKVQAS3, produced by subsetting and annotating OKVQA to fit S3 specifications
+      S3VQA, created from the ground up to S3 specifications.</p>
     <div class="setFontSize margin30">
         <ul>
             <li>6765 question, image pairs</li>
@@ -51,21 +53,20 @@
 <hr class="hrLine">
 
 <!-- Dataset Container -->
-
-<div class="container padding-64 backgroundTheme" id="dataset">
-  <p id="datasetHeading1"><span class="bottombar">DATASET</span></p>
+<div class="container padding-64 backgroundTheme">
+  <p id="headings"><span class="bottombar" id="OKVQAS3">DATASET</span></p>
   <span class="okvqas3"><h2>OKVQA<sub>S3</sub></h2></span>
-  <p class ="setFontSize" style=" text-align: left;"> We provide additional annotations for the <a href="https://okvqa.allenai.org/download.html" style="color: #009688;">OKVQA dataset</a>.
+  <p class ="setFontSize"> We provide additional annotations for the <a href="https://okvqa.allenai.org/download.html" style="color: #009688;">OKVQA dataset</a>.
   We tag each of the questions in the OK-VQA dataset into one of the four types:
     <div class ="setFontSize margin30">
-        <ul style=" text-align: left;">
+        <ul>
             <li>Type 1 - Question which requrie detecting objects and subsequent reasoning over an external knowledge source to arrive at the answer</li>
             <li>Type 2 - Question which require reading text from the image (OCR) (and no other information) to answer </li>
             <li>Type 3 - Question which are based on personal opinion or speculation </li>
             <li>Type 4 - Other</li>
         </ul>
       </div>
-  <p class ="setFontSize" style="text-align: left;" id="spanObj"> 
+  <p class ="setFontSize" id="spanObj"> 
     Additional annoatations for Type 1 subset of OKVQA - OKVQA<sub>S3</sub>:
     For each of the question in this subset, we provide 'annotated span' and 'annotated object' which are needed as part of query reformulation.
     <br><br>Span and Object can be described as: 
@@ -76,40 +77,81 @@
             </ul> 
         </div>
 </p>
-  <p class ="setFontSize" style="text-align: left;"> Download all the annotated files for this subset from 
-  <a href="https://github.com/s3vqa/s3vqa.github.io/tree/main/data/OKVQA-S3" style="color: #009688;"><span class="dataLinkCh">here</a></span>.</p>
+<p class ="setFontSize">Download the annotated files : </p>
+  <!--3 columns for OKVQAS3 start-->
+   <div class="row">
+    <div class="column">
+      <h2 style="font-size: 30px;">Annotations</h2>
+      <ul style=" text-align: left;">
+        <a href="https://github.com/s3vqa/s3vqa.github.io/raw/main/data/OKVQA_train_annotations.zip" style="color: #009688;"><span class="dataLinkCh"><li>OKVQA Train annotations</span></li></a>
+        <a href="https://github.com/s3vqa/s3vqa.github.io/raw/main/data/OKVQA_test_annotations.zip" style="color: #009688;"><span class="dataLinkCh"><li>OKVQA Test annotations</span></li></a>
+        <a href="https://github.com/s3vqa/s3vqa.github.io/raw/main/data/OKVQA-S3_train_annotations_labels.zip" style="color: #009688;"><span class="dataLinkCh"><li>OKVQA<sub>S3</sub> Train annotations</span></li></a>
+      </ul>
+    </div>
+    <div class="column">
+      <h2 style="font-size: 30px;">OKVQA<sub>S3</sub> Questions</h2>
+      <ul style=" text-align: left;">
+        <a href="https://github.com/s3vqa/s3vqa.github.io/raw/main/data/OKVQA-S3_test_questions.zip" style="color: #009688;"><span class="dataLinkCh"><li>Test Questions</span></li></a>
+      </ul>
+    </div>
+    <div class="column">
+      <h2 style="font-size: 30px;">Images (COCO)</h2>
+      <ul style=" text-align: left;">
+        <a href="http://images.cocodataset.org/zips/train2014.zip" style="color: #009688;"><span class="dataLinkCh"><li>Train images</span></li></a>
+        <a href="http://images.cocodataset.org/zips/val2014.zip" style="color: #009688;"><span class="dataLinkCh"><li>Test images</span></li></a>
+      </ul>
+    </div>
+  </div>
+  <!--3 cols columns for OKVQAS3 end-->
   <br>
   <span id="s3VQA">
   <span class="okvqas3"><h2>S3VQA</h2></span>
-  <p class="setFontSize" style="text-align: left;">
+  <p class="setFontSize">
     As part of this work we also release a new challenge dataset S3VQA. The dataset was created using the images from the
     <a href="https://storage.googleapis.com/openimages/web/index.html" style="color: #009688;"> Open Images dataset</a>. 
     For our dataset, we provide two files each for train and test split:
     <div class ="setFontSize">
-        <ul style="text-align: left;">
+        <ul>
             <li>which contains question_id, annotated span, annotated object and annotated answer</li>
             <li>which contains question_id, image_id and question</li>
         </ul> 
     </div>
+  <p class ="setFontSize">Download the annotated files : </p>
   </p>
 </span>
-  <p class ="setFontSize" style="text-align: left;"> Download the files from <a href="https://github.com/s3vqa/s3vqa.github.io/tree/main/data/S3-VQA" style="color: #009688;"><span class="dataLinkCh">here</span></a>.</p>
+<!--3 columns for S3VQA start-->
+<div class="row">
+  <div class="column">
+    <h2 style="font-size: 30px;">S3VQA Annotations</h2>
+    <ul style=" text-align: left;">
+      <a href="https://github.com/s3vqa/s3vqa.github.io/raw/main/data/S3-VQA_train_annotations.zip" style="color: #009688;"><span class="dataLinkCh"><li>Train annotations</span></li></a>
+      <a href="https://github.com/s3vqa/s3vqa.github.io/raw/main/data/S3-VQA_dev_annotations.zip" style="color: #009688;"><span class="dataLinkCh"><li>Dev annotations</span></li></a>
+    </ul>
+  </div>
+  <div class="column">
+    <h2 style="font-size: 30px;">S3VQA Questions</h2>
+    <ul style=" text-align: left;">
+      <a href="https://github.com/s3vqa/s3vqa.github.io/raw/main/data/S3-VQA_train_questions.zip" style="color: #009688;"><span class="dataLinkCh"><li>Train questions</li></span></a>
+      <a href="https://github.com/s3vqa/s3vqa.github.io/raw/main/data/S3-VQA_dev_questions.zip" style="color: #009688;"><span class="dataLinkCh"><li>Dev questions</span></li></a>
+      <a href="https://github.com/s3vqa/s3vqa.github.io/raw/main/data/S3-VQA_test_questions.zip" style="color: #009688;"><span class="dataLinkCh"><li>Test questions</span></li></a>
+    </ul>
+  </div>
+  <div class="column">
+    <h2 style="font-size: 30px;">Images (OpenImages)</h2>
+    <ul style=" text-align: left;">
+      <a href="https://storage.googleapis.com/openimages/web/download.html" style="color: #009688;"><span class="dataLinkCh"><li>Images</span></li></a>
+    </ul>
+  </div>
+</div>
+<!--3 cols columns for S3VQA end-->
+
 </div>  
 <hr class="hrLine">
 
-<!-- Code Container -->
-
-<div class="container padding-64 backgroundTheme center" id="code">
-  <p id="codeHeading"><span class="bottombar">CODE</span></p>
-  <p class ="setFontSize margin30"> Access the code from the link given below: </p>
-  <a href="https://github.com/s3vqa/s3vqa.github.io/tree/main/code" style="color: #009688;"><span class="dataLink">Source Code</span></a>
-</div>   
-
-<hr class="hrLine">
 <!-- Challenge Container -->
 
 <div class="container padding-64 backgroundTheme center" id="challenge">
-  <p id="codeHeading"><span class="bottombar">CHALLENGE</span></p>
+  <p id="headings"><span class="bottombar">CHALLENGE</span></p>
    <p style="text-align: left; margin: 30px 0px 0px 0px;" class ="setFontSize">Task : Given an image and a natural language question about the image, 
     the task is to find each of the following items
     <ul class ="setFontSize margin30" style="text-align: left;">
@@ -129,6 +171,16 @@
     <p style="text-align: left;" class ="setFontSize">You will need to create a JSON file with the name "output.json" containing your results in the correct format and submit the ".zip" file.</p>
   </p>
   <a href="https://competitions.codalab.org/competitions/29760" style="color: #009688;"><span class="dataLink margin30">Access challenge here</span></a>
+</div>   
+
+<hr class="hrLine">
+
+<!-- Code Container -->
+
+<div class="container padding-64 backgroundTheme center" id="code">
+  <p id="headings"><span class="bottombar">CODE</span></p>
+  <p class ="setFontSize margin30"> Access the code from the link given below: </p>
+  <a href="https://github.com/s3vqa/s3vqa.github.io/tree/main/code" style="color: #009688;"><span class="dataLink">Source Code</span></a>
 </div>   
 
 <hr class="hrLine">
