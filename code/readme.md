@@ -1,5 +1,5 @@
-# Query reformulation for VQA
-Query reformulation based on hyponym-hypernym relations.
+# Query reformulation for S3VQA
+This repository contains the code for : Select, Substitute, Search - New Benchmark for Knowledge-Augmented Visual Question Answering
 
 ## Installation 
 
