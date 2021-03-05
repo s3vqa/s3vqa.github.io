@@ -118,66 +118,19 @@
 
 /************************** Style for Navigation bar ends *************************/
 
-/************************** Style for Content start *************************/
+/************************** Style for headings start *************************/
 
-#VQAQues {
-
-    font-size: 60px;
-    color: gray;
-    font-family: "Segoe UI",Arial,sans-serif;
-    font-weight: 400;
-    text-align: center!important;
-}
-
-/************************** Style for Content ends *************************/
-
-#VQAQues {
+#headings {
 
   font-size: 60px;
   color: gray;
   font-family: "Segoe UI",Arial,sans-serif;
   font-weight: 400;
   text-align: center!important;
-  padding: 20px 0 20 0px;
   margin: 0;
 }
 
-#datasetHeading1 {
-
-  font-size: 60px;
-  color: gray;
-  font-family: "Segoe UI",Arial,sans-serif;
-  font-weight: 400;
-  text-align: center!important;
-  padding: 20px 0 20 0px;
-  margin: 0;
-}
-
-#datasetHeading2 {
-
-  font-size: 60px;
-  color: gray;
-  font-family: "Segoe UI",Arial,sans-serif;
-  font-weight: 400;
-  text-align: center!important;
-  padding: 20px 0 20 0px;
-  margin: 0;
-}
-
-#dataset{
-  text-align: center!important;
-}
-
-#codeHeading {
-
-  font-size: 60px;
-  color: gray;
-  font-family: "Segoe UI",Arial,sans-serif;
-  font-weight: 400;
-  text-align: center!important;
-  padding: 20px 0 20 0px;
-  margin: 0;
-}
+/************************** Style for headings ends *************************/
 
 /************************** Style for Contact container start *************************/
 
@@ -319,3 +272,25 @@ h3 {
   border: 2px solid #9E9E9E;
   border-radius: 5px;
 }
+
+/************************** column style start *************************/
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 0px 50px 20px 70px;
+  color: gray;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/************************** column style end *************************/
