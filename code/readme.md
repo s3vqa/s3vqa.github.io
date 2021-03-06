@@ -24,6 +24,8 @@ To extract the span/hypernym from the question that needs to be replaced.
 ### preprocessing/data
 For preprocessing of data
 
+### search
+For retrieving extenal knowledge using reformulated queries
 
 ## Training 
 ```bash
