@@ -15,10 +15,10 @@ conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=10.1 -c pytorch
 
 ## Files
 
-### HypoSelector
+### models/HypoSelector
 To extract the correct hyponym from the detections needed for replacement.
 
-### SpanSelector
+### models/SpanSelector
 To extract the span/hypernym from the question that needs to be replaced.
 
 ### data
