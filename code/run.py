@@ -11,9 +11,9 @@ import argparse
 import json
 import re 
 import logging
-from data import OKVQA
-from HypoSelector import HypoSelector
-from SpanSelector import SpanSelector
+from preprocessing.data import OKVQA
+from models.HypoSelector import HypoSelector
+from models.SpanSelector import SpanSelector
 logging.basicConfig(level=logging.ERROR)
  
 torch.autograd.set_detect_anomaly(True)
