@@ -22,13 +22,16 @@ To extract the correct hyponym from the detections needed for replacement.
 To extract the span/hypernym from the question that needs to be replaced.
 
 ### preprocessing/data
-For preprocessing of data
+for preprocessing of data
 
 ### Select, Substitute, and Search 
 
  - Select : to predict relevant hypernym and hypernym-to-hyponym scores
  - Substitute : to predict relevant hyponym and reformulate the question
  - google_search, MRC : to retrieve external knowledge and predict natural language answer
+
+### demo/demo_pipeline
+jupyter notebook with a sample example on Select, Substitute and Search
 
 ## Training 
 ```bash
