@@ -24,8 +24,10 @@ To extract the span/hypernym from the question that needs to be replaced.
 ### preprocessing/data
 For preprocessing of data
 
-### search
-For retrieving extenal knowledge using reformulated queries
+### select, substitute, and search 
+#### Select : to predict relevant hypernym and hypernym-to-hyponym scores
+#### Substitute : to predict relevant hyponym and reformulate the question
+#### google_search, MRC : to retrieve external knowledge and predict natural language answer
 
 ## Training 
 ```bash
