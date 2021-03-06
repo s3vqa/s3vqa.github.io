@@ -15,8 +15,8 @@ def reformulate(input_file):
     f_count = 0
     for q_id, value in dataset.items(): 
         try:
-            question = value['generated_q']
-            label_hyper = value['Pspan']
+            question = value['question']
+            label_hyper = value['P_hypernym']
             obj = sorted(value['hyponyms_scores_l'], key=value['hyponyms_scores_l'].get, reverse=True)[0] 
             span = re.compile(label_hyper, re.IGNORECASE)
             hypo = obj
@@ -27,7 +27,7 @@ def reformulate(input_file):
             new_question = span.sub(hypo, question)
             value['predicted_q'] = new_question
         except:
-            value['predicted_q'] = value['generated_q']
+            value['predicted_q'] = value['question']
             f_count+=1
 #     print(f_count)
     return dataset
@@ -41,7 +41,7 @@ def Substitute(input_file, ckpt_path_H):
     num_labels = 2
     hidden_size = 768
     model = HypoSelector(num_labels, hidden_size)
-    model_save_filepath = ckpt_path_H
+    model_save_filepath = # checkpoint for HypoSelector
     state = torch.load(model_save_filepath)
     model.load_state_dict(state['state_dict'])
     device = torch.device('cuda')
@@ -63,7 +63,7 @@ def Substitute(input_file, ckpt_path_H):
                 hyponym_input_ids.append(torch.zeros(8, dtype=torch.int64))
             hyponym_input_ids = torch.tensor(hyponym_input_ids, dtype=torch.int64).unsqueeze(0)
 
-            label_hyper_encoded = tokenizer.encode(d["Pspan"],pad_to_max_length=False,add_special_tokens=False)	
+            label_hyper_encoded = tokenizer.encode(d["P_hypernym"],pad_to_max_length=False,add_special_tokens=False)	
             def find_sub_list(sl,l):
                 sll=len(sl)
                 for ind in (i for i,e in enumerate(l) if e==sl[0]):
@@ -76,10 +76,10 @@ def Substitute(input_file, ckpt_path_H):
                 continue
 
             question = d["question"]
-            label_hyper = d["Pspan"]
+            label_hyper = d["P_hypernym"]
             label_hypo = '+'
             detected_hyponyms = d["detections"]
-            o2hs = d["Po2hs"]
+            o2hs = d["P_o2hs"]
             hypo_scores = []
             for detected_hypo in detected_hyponyms:
                 hypo_scores.append(o2hs[detected_hypo])
@@ -181,13 +181,13 @@ def Substitute(input_file, ckpt_path_H):
                 hyponyms_scores_l[h] = scores_l[i].item()
                 i += 1
             try:
-                d['Pobject'] = hyponyms[hypo_i]
+                d['P_hyponym'] = hyponyms[hypo_i]
                 d['hyponyms_scores'] = hyponyms_scores
                 d['hyponyms_scores_l'] = hyponyms_scores_l
                 d['hypernymy_relations'] = {}
             except:
                 hypo = sorted(hyponyms_scores_l, key=hyponyms_scores_l.get, reverse=False)[0]
-                d['Pobject'] = hypo
+                d['P_hyponym'] = hypo
                 d['hyponyms_scores'] = hyponyms_scores
                 d['hyponyms_scores_l'] = hyponyms_scores_l
                 d['hypernymy_relations'] = {}

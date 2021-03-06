@@ -36,14 +36,14 @@ def hypo_hyper_scores(input_file):
 #     dataset = json.load(open(input_file))
     dataset = input_file
     count, fcount = 0, 0
-    chkpnt = 'nouns.bin.best'
+    chkpnt = # checkpoint for Poincare model
     if isinstance(chkpnt, str):
         assert os.path.exists(chkpnt)
         chkpnt = th.load(chkpnt, map_location='cuda:0')
     p_model = EntailmentConeModel(chkpnt)
     for q_id, item in tqdm(dataset.items()):
         try:
-            o_hyper = item['Pspan']
+            o_hyper = item['P_hypernym']
             detections = item['detections']
             hyper = m_hyper(o_hyper)
             hyper = wordnet.synsets(hyper)[0].name() if wordnet.synsets(hyper) else hyper
@@ -57,10 +57,10 @@ def hypo_hyper_scores(input_file):
                 result = sorted(result, key=lambda x:-x[1])
                 for p, q in result:
                     o2hs[' '.join(p.split('_'))] = q
-            item['Po2hs'] = o2hs
+            item['P_o2hs'] = o2hs
             count+=1
         except:
-            item['Po2hs'] = {}
+            item['P_o2hs'] = {}
             fcount+=1
 #     print('\n', count, fcount)
     return dataset
@@ -93,7 +93,7 @@ def Select(input_file, ckpt_path_S):
             i = i.item()
             j = j.item()
             span = tokenizer.decode(question_encoded_tensor[0][i:j+1])
-            d['Pspan'] = span
+            d['P_hypernym'] = span
     output_file = hypo_hyper_scores(dataset)
     with open('select_output.json', 'w') as h:
         json.dump(output_file, h)
