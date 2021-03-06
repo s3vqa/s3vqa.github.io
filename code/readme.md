@@ -26,9 +26,9 @@ For preprocessing of data
 
 ### Select, Substitute, and Search 
 
-#### Select : to predict relevant hypernym and hypernym-to-hyponym scores
-#### Substitute : to predict relevant hyponym and reformulate the question
-#### google_search, MRC : to retrieve external knowledge and predict natural language answer
+#### - Select : to predict relevant hypernym and hypernym-to-hyponym scores
+#### - Substitute : to predict relevant hyponym and reformulate the question
+#### - google_search, MRC : to retrieve external knowledge and predict natural language answer
 
 ## Training 
 ```bash
