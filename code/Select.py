@@ -74,7 +74,7 @@ def Select(input_file, ckpt_path_S):
     hidden_size = 768
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     model = SpanSelector(num_labels, hidden_size)
-    model_save_filepath = ckpt_path_S
+    model_save_filepath = #checkpoint SpanSelector
     state = torch.load(model_save_filepath)
     model.load_state_dict(state['state_dict'])
     device = torch.device('cuda')
