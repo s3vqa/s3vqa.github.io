@@ -21,7 +21,7 @@ To extract the correct hyponym from the detections needed for replacement.
 ### models/SpanSelector
 To extract the span/hypernym from the question that needs to be replaced.
 
-### data
+### preprocessing/data
 For preprocessing of data
 
 
