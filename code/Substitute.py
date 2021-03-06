@@ -9,10 +9,7 @@ max_sequence_length_question = 32
 
 
 def reformulate(input_file):
-#     dataset = json.load(open(input_file))
     dataset = input_file
-    count=0
-    f_count = 0
     for q_id, value in dataset.items(): 
         try:
             question = value['question']
@@ -28,12 +25,9 @@ def reformulate(input_file):
             value['predicted_q'] = new_question
         except:
             value['predicted_q'] = value['question']
-            f_count+=1
-#     print(f_count)
     return dataset
 
 def Substitute(input_file, ckpt_path_H):
-#     dataset = json.load(open(input_file))
     dataset = input_file
     l = len(dataset)
     print("Dataset Size : ", len(dataset))
