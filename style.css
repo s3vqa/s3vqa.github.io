@@ -12,10 +12,11 @@
 
 /************************** Style for Header starts *************************/
 .header {
-    padding: 40px;
     background: #009688;
     color: white;
     font-size: 30px;
+    width: 100%;
+    top: 0;
   }
 
   #vqa{
@@ -39,6 +40,7 @@
 .topnav {
   background-color: #333;
   overflow: hidden;
+  width: 100%;
 }
 
 /* Style the links inside the navigation bar */
@@ -118,19 +120,25 @@
 
 /************************** Style for Navigation bar ends *************************/
 
-/************************** Style for headings start *************************/
+/************************** Style for SECTION HEADING starts *************************/
 
 #headings {
-
   font-size: 60px;
   color: gray;
   font-family: "Segoe UI",Arial,sans-serif;
   font-weight: 400;
-  text-align: center!important;
-  margin: 0;
+  text-align: center;
 }
 
-/************************** Style for headings ends *************************/
+.padding-64 {
+  padding-top: 64px!important;
+  padding-bottom: 64px!important;
+}
+.bottombar {
+  border-bottom: 6px solid #009688!important;
+}
+
+/************************** Style for SECTION HEADING ends *************************/
 
 /************************** Style for Contact container start *************************/
 
@@ -143,19 +151,12 @@
     padding: 0.01em 16px;
 }
 
-.padding-64 {
-    padding-top: 64px!important;
-    padding-bottom: 64px!important;
-}
-
 .padding-16 {
     padding-top: 16px!important;
     padding-bottom: 16px!important;
 }
 
-.bottombar {
-    border-bottom: 6px solid #009688!important;
-}
+
 
 .xlarge {
     font-size: 24px!important;
@@ -233,34 +234,39 @@ h3 {
 
 /************************** Style for Footer end *************************/
 
-.dataLink:hover{
+a.dataLink:hover{
   color: darkslategrey;
-  font-size: 45px;
+  font-size: 50px;
+ 
 }
-.dataLink{
+a.dataLink{
   color: #009688;
   font-size: 40px; 
+  text-decoration: none;
 }
 
-.dataLinkCh:hover{
-  color: darkslategrey;
-  font-size: 30px;
-}
-.dataLinkCh{
+a.datasetLink{
   color: #009688;
+  text-decoration: none;
   font-size: 25px; 
 }
 
-.okvqas3 {
+a.datasetLink:hover{
+  color: darkslategrey;
+  text-decoration: none;
+  font-size: 35px; 
+}
+
+.headingInSection {
   text-align: left;
   color: #009688;
   font-size: 25px;
 }
 
 .setFontSize {
-  font-size: 25px;
+  font-size: 23px;
   font-weight:200;
-  margin: 0;
+ 
   
 }
 
@@ -282,8 +288,9 @@ h3 {
 .column {
   float: left;
   width: 33.33%;
-  padding: 0px 50px 20px 70px;
+  padding: 0px 0px 20px 30px;
   color: gray;
+  text-align: center;
 }
 
 /* Clear floats after the columns */
@@ -294,3 +301,8 @@ h3 {
 }
 
 /************************** column style end *************************/
+
+.properNavigation{
+  padding-top: 300px;
+  margin-top: -300px;
+}
