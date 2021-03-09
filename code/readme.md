@@ -30,7 +30,7 @@ for preprocessing of data
  - Substitute : to predict relevant hyponym and reformulate the question
  - google_search, MRC : to retrieve external knowledge and predict natural language answer
 #### Note
- Select quantifies hypernym-hyponym relation making use of Poincaré Embeddings. Please refer to this https://github.com/facebookresearch/poincare-embeddings directory for setup.
+ Select quantifies hypernym-hyponym relation making use of Poincaré Embeddings. Please refer to this https://github.com/facebookresearch/poincare-embeddings for setup.
 
 ### demo/demo_pipeline
 jupyter notebook with a sample example on Select, Substitute and Search
