@@ -29,6 +29,8 @@ for preprocessing of data
  - Select : to predict relevant hypernym and hypernym-to-hyponym scores
  - Substitute : to predict relevant hyponym and reformulate the question
  - google_search, MRC : to retrieve external knowledge and predict natural language answer
+#### Note
+ Select quantifies hypernym-hyponym relation making use of Poincaré Embeddings. Please refer to this https://github.com/facebookresearch/poincare-embeddings directory for setup.
 
 ### demo/demo_pipeline
 jupyter notebook with a sample example on Select, Substitute and Search
