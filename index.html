@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
-<title>S3VQA</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-07REKGQNC3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-<link rel="stylesheet" href="./style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    gtag('config', 'G-07REKGQNC3');
+  </script>
+  
+  <title>S3VQA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href=".\style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
 
 <body id="myPage">
 
@@ -14,50 +27,66 @@
   <div style="padding: 40px;">
     <h1 id="vqa">S3VQA</h1> 
     <p><h2 style="font-size: 40px; margin: 0; padding: 0px 0px 10px 0px;">Select, Substitute, Search</h2>
-    <strong>New Benchmark for Knowledge-Augmented Visual Question Answering</strong></p>
+    <strong>A New Benchmark for Knowledge-Augmented Visual Question Answering</strong></p>
   </div> 
 </div> 
 <!---------------Navigation bar starts----------->
-  <div class="topnav">
-    <a class="active" href="#">Home</a>
-    <div class="dropdown">
-      <button class="dropbtn">Dataset
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="#OKVQAS3">OKVQA<sub>S3</sub></a>
-        <a href="#s3VQA">S3VQA</a>
-      </div>
+<div class="topnav">
+  <a class="active" href="#">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Dataset
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#OKVQAS3">OKVQA<sub>S3</sub></a>
+      <a href="#s3VQA">S3VQA</a>
     </div>
-    <a href="#challenge">Challenge</a>
-    <a href="#code">Code</a>
-    <a href="#contact">Contact</a>
   </div>
+  <a href="#challenge">Challenge</a>
+  <a href="#code">Code</a>
+  <a href="#tutorial">Tutorial</a>
+  <a href="#contact">Contact</a>
+ </div>
+
 <!---------------Navigation bar ends----------->
 <!--------------------------------------------HEADER SECTION ENDS--------------------------------------------------->
 
 <!--------------------------------------------OVERVIEW SECTION STARTS--------------------------------------------------->
 <div class="container padding-64 backgroundTheme">
-  <h2>This website is a resource for the paper <a href="#" style="color: #009688; text-decoration: none;">
-    Select, Substitute, Search: A New Benchmark for Knowledge-Augmented Visual Question Answering</a>(Pending submissions SIGIR 2021)</h2>  
+  <h2>This website is a resource for the paper <a href="https://arxiv.org/abs/2103.05568" style="color: #009688; text-decoration: none;">
+    Select, Substitute, Search: A New Benchmark for Knowledge-Augmented Visual Question Answering</a>(arXiv link)</h2>  
   <h2 id="headings"><span class="bottombar"> OVERVIEW </span></h2>
   <div class="setFontSize">
     <p>S3VQA provides a new approach that involves Select, Substitute, and Search (SSS) for open-domain visual question answering. 
       S3 reaches the end result (i.e. natural language answer) for the VQA type query by first reformulating the input question 
-      (using Select and Substitute) and then retrieving external knowledge (using Search). We, as part of this work, provide:
+      (using Select and Substitute) and then retrieving external knowledge source facts (using Search). We, as part of this work, provide:
       a) OKVQAS3, produced by subsetting and annotating OKVQA to fit S3 specifications,
       b) S3VQA, created from the ground up to S3 specifications.</p>
-    <ul>
-      <li>6765 question, image pairs</li>
-      <li>Average answer length : 3 (words)</li>
-      <li>Automatic evaluation metric</li>
-    </ul>
+      <div class="row">
+        <div class="overviewColumn">
+          <h2 style="font-size: 30px;">S3VQA</h2>
+          <ul>
+            <li>6765 question-image pairs</li>
+            <li>Average answer length: 3 (words)</li>
+            <li>Automatic evaluation metric</li>
+          </ul>
+        </div>
+        <div class="overviewColumn">
+          <h2 style="font-size: 30px;">OKVQA<sub>S3</sub></h2>
+          <ul>
+            <li>2640 question-image pairs</li>
+            <li>Average answer length: 1.5 (words)</li>
+            <li>Automatic evaluation metric</li>
+          </ul>
+        </div>
+      </div>
   </div>
-  <hr class="hrLine">
+</div>
+<hr class="hrLine">
 <!--------------------------------------------OVERVIEW SECTION ENDS--------------------------------------------------->
 
 <!--------------------------------------------DATASET SECTION STARTS--------------------------------------------------->
-  <div  id="OKVQAS3">
+<div  class="container padding-64 backgroundTheme" id="OKVQAS3">
     <h2 id="headings"><span class="bottombar">DATASET</span></h2>
     <span class="headingInSection"><h2>OKVQA<sub>S3</sub></h2></span>
     <div class ="setFontSize">
@@ -65,12 +94,12 @@
         We provide additional annotations for the <a href="https://okvqa.allenai.org/download.html" style="color: #009688;">OKVQA dataset</a>.
         We tag each of the questions in the OK-VQA dataset into one of the four types:
         <ul>
-          <li>Type 1 - Question which requrie detecting objects and subsequent reasoning over an external knowledge source to arrive at the answer</li>
+          <li>Type 1 - Question which require detecting objects and subsequent reasoning over an external knowledge source to arrive at the answer</li>
           <li>Type 2 - Question which require reading text from the image (OCR) (and no other information) to answer </li>
           <li>Type 3 - Question which are based on personal opinion or speculation </li>
           <li>Type 4 - Other</li>
         </ul>    
-          Additional annoatations for Type 1 subset of OKVQA - OKVQA<sub>S3</sub>:For each of the question in this subset, 
+          Additional annoatations for Type 1 subset of OKVQA - OKVQA<sub>S3</sub>: For each of the question in this subset, 
           we provide 'annotated span' and 'annotated object' which are needed as part of query reformulation.
           <p id="spanObj"><br>Span and Object can be described as: 
           <ul>
@@ -83,7 +112,7 @@
     </div>
     <!-----------3 columns for OKVQAS3 start------------->
     <div class="row">
-      <div class="column" style="text-align: left;">
+      <div class="column">
         <h2 style="font-size: 30px;">Annotations</h2>
         <ul style="line-height:50px; list-style-type: none;">
           <a class="datasetLink" href="https://github.com/s3vqa/s3vqa.github.io/raw/main/data/OKVQA_train_annotations.zip"><li>OKVQA Train annotations</li></a>
@@ -91,13 +120,13 @@
           <a class="datasetLink" href="https://github.com/s3vqa/s3vqa.github.io/raw/main/data/OKVQA-S3_train_annotations_labels.zip"><li>OKVQA<sub>S3</sub> Train annotations</li></a>
         </ul>
       </div>
-      <div class="column"  style="text-align: left;">
+      <div class="column">
         <h2 style="font-size: 30px;">OKVQA<sub>S3</sub> Questions</h2>
         <ul style="  list-style-type: none; line-height:50px; list-style-type: none;">
           <a class="datasetLink" href="https://github.com/s3vqa/s3vqa.github.io/raw/main/data/OKVQA-S3_test_questions.zip"><li>Test Questions</li></a>
         </ul>
       </div>
-      <div class="column"  style="text-align: left;">
+      <div class="column">
         <h2 style="font-size: 30px;">Images (COCO)</h2>
         <ul style="line-height:50px; list-style-type: none;">
           <a class="datasetLink" href="http://images.cocodataset.org/zips/train2014.zip"><li>Train images</li></a>
@@ -120,14 +149,14 @@
       </span>
       <!-------------3 columns for S3VQA start-------------->
       <div class="row">
-        <div class="column" style="text-align: left;">
+        <div class="column">
           <h2 style="font-size: 30px;">S3VQA Annotations</h2>
           <ul style="line-height:50px;list-style-type: none; ">
             <a class="datasetLink" href="https://github.com/s3vqa/s3vqa.github.io/raw/main/data/S3-VQA_train_annotations.zip"><li>Train annotations</li></a>
             <a class="datasetLink" href="https://github.com/s3vqa/s3vqa.github.io/raw/main/data/S3-VQA_dev_annotations.zip"><li>Dev annotations</li></a>
           </ul>
         </div>
-        <div class="column" style="text-align: left;">
+        <div class="column">
           <h2 style="font-size: 30px;">S3VQA Questions</h2>
           <ul style="line-height:50px; list-style-type: none;">
             <a class="datasetLink" href="https://github.com/s3vqa/s3vqa.github.io/raw/main/data/S3-VQA_train_questions.zip"><li>Train questions</li></a>
@@ -135,7 +164,7 @@
             <a class="datasetLink" href="https://github.com/s3vqa/s3vqa.github.io/raw/main/data/S3-VQA_test_questions.zip"><li>Test questions</li></a>
           </ul>
         </div>
-        <div class="column" style="text-align: left;">
+        <div class="column">
           <h2 style="font-size: 30px;">Images (OpenImages)</h2>
           <ul style="line-height:50px; list-style-type: none;">
             <a class="datasetLink" href="https://storage.googleapis.com/openimages/web/download.html"><li>Images</li></a>
@@ -144,13 +173,13 @@
       </div>
       <!-------------3 columns for S3VQA ends-------------->
     </div>
-  </div>
+</div>
   <hr class="hrLine">
 <!--------------------------------------------DATASET SECTION ENDS--------------------------------------------------->
 
 <!--------------------------------------------CHALLENGE SECTION STARTS--------------------------------------------------->
 
-  <div id="challenge">
+<div class="container padding-64 backgroundTheme" id="challenge">
     <h2 id="headings"><span class="bottombar">CHALLENGE</span></h2>
     <div class ="setFontSize">
       <p>Task : Given an image and a natural language question about the image, the task is to find each of the following items
@@ -172,34 +201,52 @@
         <br><br>
         Follow the below link to access the challenge : 
       </p>
-      <div class="center"><a class="dataLink" href="https://competitions.codalab.org/competitions/29760">Access challenge here</a></div>
+      <div class="center"><a class="dataLink" href="https://competitions.codalab.org/competitions/29930">Access challenge here</a></div>
       <br><br>
+        <iframe src="https://competitions.codalab.org/competitions/leaderboard_widget/29930/" style="height: 500px; width: 100%; border: none;"></iframe>
     </div>
-  </div>
-  <hr class="hrLine">
+</div>
+<hr class="hrLine">
 <!--------------------------------------------CHALLENGE SECTION ENDS--------------------------------------------------->
 
 <!--------------------------------------------CODE SECTION STARTS--------------------------------------------------->
 
-  <div id="code" class="center">
+<div id="code" class="container padding-64 backgroundTheme center">
     <h2 id="headings"><span class="bottombar">CODE</span></h2>
     <p class ="setFontSize"> Refer the code from the link given below: <br><br></p>
     <a class="dataLink" href="https://github.com/s3vqa/s3vqa.github.io/tree/main/code">Source Code</a>
     <br><br>
-  </div>
+</div>
   <hr class="hrLine">
 <!--------------------------------------------CODE SECTION ENDS--------------------------------------------------->
 
+
+<!--------------------------------------------TUTORIAL SECTION STARTS--------------------------------------------------->
+
+<div id="tutorial" class="container padding-64 backgroundTheme">
+    <h2 id="headings"><span class="bottombar center">TUTORIAL</span></h2>
+    <div class="tutorial">
+         <script src="https://gist.github.com/s3vqa/cfc8b639dee087c49bf618f4e8161e14.js"></script>  
+    </div>
+    <br><br>
+</div>
+  <hr class="hrLine">
+<!--------------------------------------------TUTORIAL SECTION ENDS--------------------------------------------------->
+
+
+
 <!--------------------------------------------CONTACT SECTION STARTS--------------------------------------------------->
+<div class="container padding-64 backgroundTheme center">  
     <h2 id="headings"><span class="bottombar" id="contact">Contact Us</span></h2>
     <div class ="setFontSize">
-      <span class="headingInSection"><h2>Address</h2></span>
+      <span class="headingInSection center"><h2>Address</h2></span>
       <p>Indian Institute Of Technology, Main gate road, IIT Area, Powai</p>
       <p><i class="fa fa-map-marker text-teal xlarge"></i> Mumbai, India</p>
       <p><i class="fa fa-envelope-o text-teal xlarge"></i> mayankk@cse.iitb.ac.in</p>
     </div>
+</div>    
 <!--------------------------------------------CONTACT SECTION ENDS--------------------------------------------------->
-</div>
+
 <!--------------------------------------------FOOTER SECTION STARTS--------------------------------------------------->
 
 <footer class="container padding-32 theme-d1 center">

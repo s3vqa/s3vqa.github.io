@@ -128,6 +128,7 @@
   font-family: "Segoe UI",Arial,sans-serif;
   font-weight: 400;
   text-align: center;
+  margin-top: 0;
 }
 
 .padding-64 {
@@ -151,23 +152,8 @@
     padding: 0.01em 16px;
 }
 
-.padding-16 {
-    padding-top: 16px!important;
-    padding-bottom: 16px!important;
-}
-
-
-
 .xlarge {
     font-size: 24px!important;
-}
-
-h3 {
-    font-size: 24px;
-    font-family: "Segoe UI",Arial,sans-serif;
-    font-weight: 400;
-    margin: 10px 0;
-
 }
 
 .text-teal {
@@ -265,9 +251,8 @@ a.datasetLink:hover{
 
 .setFontSize {
   font-size: 23px;
-  font-weight:200;
- 
-  
+  font-weight:100;
+  color: gray;
 }
 
 .margin30{
@@ -290,7 +275,7 @@ a.datasetLink:hover{
   width: 33.33%;
   padding: 0px 0px 20px 30px;
   color: gray;
-  text-align: center;
+  text-align: left;
 }
 
 /* Clear floats after the columns */
@@ -302,7 +287,20 @@ a.datasetLink:hover{
 
 /************************** column style end *************************/
 
-.properNavigation{
-  padding-top: 300px;
-  margin-top: -300px;
+
+/************************** Overview 2 columns division *************************/
+.overviewColumn {
+  float: left;
+  width: 50%;
+  color: gray;
+  padding-left: 60px;
+  text-align: left;
 }
+/************************** Overview 2 columns division *************************/
+
+
+/************************** Tutorial  *************************/
+.tutorial{
+  padding: 0px 100px 0px 100px;
+}
+/************************** Tutorial *************************/
