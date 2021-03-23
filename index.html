@@ -11,7 +11,8 @@
 
     gtag('config', 'G-07REKGQNC3');
   </script>
-  
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <title>S3VQA</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,6 +44,7 @@
     </div>
   </div>
   <a href="#challenge">Challenge</a>
+  <a href="#leaderboard">Leaderboard</a>
   <a href="#code">Code</a>
   <a href="#tutorial">Tutorial</a>
   <a href="#contact">Contact</a>
@@ -202,12 +204,22 @@
         Follow the below link to access the challenge : 
       </p>
       <div class="center"><a class="dataLink" href="https://competitions.codalab.org/competitions/29930">Access challenge here</a></div>
-      <br><br>
-        <iframe src="https://competitions.codalab.org/competitions/leaderboard_widget/29930/" style="height: 500px; width: 100%; border: none;"></iframe>
     </div>
 </div>
 <hr class="hrLine">
 <!--------------------------------------------CHALLENGE SECTION ENDS--------------------------------------------------->
+
+<!--------------------------------------------LEADERBOARD SECTION STARTS--------------------------------------------------->
+
+<div id="leaderboard" class="container padding-64 backgroundTheme center">
+  <h2 id="headings"><span class="bottombar">LEADERBOARD</span></h2>
+  <div class ="setFontSize"> <span class="headingInSection center"><h2 id="leaderboard1">OKVQA<sub>S3</sub></h2></span></div>
+  <div id="okvqa_leaderboard_table"></div>
+  <div class ="setFontSize"> <span class="headingInSection center"><h2 id="leaderboard2">S3VQA</h2></span></div>
+  <div id="s3vqa_leaderboard_table"></div>
+</div>
+<hr class="hrLine">
+<!--------------------------------------------LEADERBOARD SECTION ENDS--------------------------------------------------->
 
 <!--------------------------------------------CODE SECTION STARTS--------------------------------------------------->
 
@@ -261,3 +273,97 @@
 <!--------------------------------------------FOOTER SECTION ENDS--------------------------------------------------->
 </body>
 </html>
+
+<script>
+  $(document).ready(function(){
+  $('.header').ready(function(){
+   $.ajax({
+    url:"okvqa.csv",
+    dataType:"text",
+    success:function(data)
+    {
+     var employee_data = data.split(/\r?\n|\r/);
+     var table_data = '<table class="styled-table">';
+     for(var count = 0; count<employee_data.length; count++)
+     {
+      var cell_data = employee_data[count].split(",");
+      table_data += '<tr>';
+      for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+      {
+       if(cell_count == 0)
+       {
+         if(count === 0)
+         {
+         table_data += '<th>'+'#'+'</th>';
+         }
+         else if(cell_data[cell_count] != 0)
+         {
+         table_data += '<td>'+count+'</td>';
+         }
+       }else{
+         if(count === 0)
+         {
+         table_data += '<th>'+cell_data[cell_count]+'</th>';
+         }
+         else if(cell_data[cell_count] != 0)
+         {
+         table_data += '<td>'+cell_data[cell_count]+'</td>';
+         }
+       }
+      }
+      table_data += '</tr>';
+     }
+     table_data += '</table>';
+     $('#okvqa_leaderboard_table').html(table_data);
+    }
+   });
+  });
+  
+ });
+
+ $(document).ready(function(){
+  $('.header').ready(function(){
+   $.ajax({
+    url:"s3vqa.csv",
+    dataType:"text",
+    success:function(data)
+    {
+     var employee_data = data.split(/\r?\n|\r/);
+     var table_data = '<table class="styled-table">';
+     for(var count = 0; count<employee_data.length; count++)
+     {
+      var cell_data = employee_data[count].split(",");
+      table_data += '<tr>';
+      for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+      {
+       if(cell_count == 0)
+       {
+         if(count === 0)
+         {
+         table_data += '<th>'+'#'+'</th>';
+         }
+         else if(cell_data[cell_count] != 0)
+         {
+         table_data += '<td>'+count+'</td>';
+         }
+       }else{
+         if(count === 0)
+         {
+         table_data += '<th>'+cell_data[cell_count]+'</th>';
+         }
+         else if(cell_data[cell_count] != 0)
+         {
+         table_data += '<td>'+cell_data[cell_count]+'</td>';
+         }
+       }
+      }
+      table_data += '</tr>';
+     }
+     table_data += '</table>';
+     $('#s3vqa_leaderboard_table').html(table_data);
+    }
+   });
+  });
+  
+ });
+</script>
